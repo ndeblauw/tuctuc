@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('article_id');
+            $table->string('author_id');
             $table->text('comment');
-            $table->string('author_name');
 
             $table->timestamps();
         });
