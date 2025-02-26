@@ -1,4 +1,6 @@
 <h2>Articles</h2>
+<x-site-layout>
+</x-site-layout>
 
 <ul>
     @foreach($articles as $article)
