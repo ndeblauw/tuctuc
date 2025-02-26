@@ -1,10 +1,15 @@
 <x-site-layout>
 
-    <h2 class="font-bold text-2xl">Articles</h2>
+    <h2 class="font-bold text-4xl">Articles</h2>
 
-    <ul class="list-disc pl-4">
+    <ul class="grid grid-cols-3 gap-12 mt-12">
         @foreach($articles as $article)
-            <li><a class="underline" href="/articles/{{$article->id}}">{{$article->title}}</a></li>
+            <li class=" p-2 border-t-2 border-t-black hover:bg-purple-50">
+                <a class="" href="/articles/{{$article->id}}">
+                    <h3 class="font-bold text-2xl">{{$article->title}}</h3>
+                    <p class="line-clamp-2"> {{$article->content}}</p>
+                </a>
+            </li>
         @endforeach
     </ul>
 
