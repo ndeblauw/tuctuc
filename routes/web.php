@@ -5,6 +5,9 @@ use Livewire\Volt\Volt;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/articles', [\App\Http\Controllers\ArticleController::class, 'index']);
+Route::get('/articles/{article}', [\App\Http\Controllers\ArticleController::class, 'show']);
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
