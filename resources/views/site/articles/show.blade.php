@@ -4,4 +4,7 @@
     <p>
         {{$article->content}}
     </p>
+
+    <x-article-contact-author :author="$article->author"/>
+
 </x-site-layout>
