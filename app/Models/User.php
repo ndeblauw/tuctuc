@@ -47,6 +47,12 @@ class User extends Authenticatable
         ];
     }
 
+    // Model relations --------
+    public function articles()
+    {
+        return $this->hasMany(Article::class, 'author_id');
+    }
+
     /**
      * Get the user's initials
      */
