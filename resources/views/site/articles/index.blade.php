@@ -2,6 +2,11 @@
 
     <h2 class="font-bold text-4xl">Articles</h2>
 
+    <div class="text-right">
+        <a href="/articles/create">create article</a>
+    </div>
+
+
     <ul class="grid grid-cols-3 gap-12 mt-12">
         @foreach($articles as $article)
             <li class=" p-2 border-t-2 border-t-black hover:bg-purple-50">
