@@ -20,4 +20,20 @@ class ArticleController extends Controller
 
         return view('site.articles.show', ['article' => $article]);
     }
+
+    public function create()
+    {
+        return view('site.articles.create');
+    }
+
+    public function store(Request $request)
+    {
+        Article::create([
+                'title' => $request->title,
+                'content' => $request->content,
+                'author_id' => 1,
+            ]);
+
+        return redirect('/articles');
+    }
 }
