@@ -8,6 +8,10 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 Route::get('/articles', [\App\Http\Controllers\ArticleController::class, 'index']);
 Route::get('/articles/{article}', [\App\Http\Controllers\ArticleController::class, 'show']);
 
+Route::get('/authors', [\App\Http\Controllers\AuthorController::class, 'index']);
+Route::get('/authors/{id}', [\App\Http\Controllers\AuthorController::class, 'show']);
+
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
