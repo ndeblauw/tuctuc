@@ -14,9 +14,8 @@ class ArticleController extends Controller
         return view('site.articles.index', ['articles' => $articles]);
     }
 
-    public function show(int $article)
+    public function show(Article $article)
     {
-        $article = \App\Models\Article::where('id', $article)->first();
 
         return view('site.articles.show', ['article' => $article]);
     }
@@ -42,17 +41,13 @@ class ArticleController extends Controller
         return redirect('/articles');
     }
 
-    public function edit(int $id)
+    public function edit(Article $article)
     {
-        $article = \App\Models\Article::where('id', $id)->first();
-
         return view('site.articles.edit', compact('article'));
     }
 
-    public function update(Request $request, int $id)
+    public function update(Request $request, Article $article)
     {
-        $article = \App\Models\Article::where('id', $id)->first();
-
         $request->validate([
             'title' => ['required'],
             'content' => ['required'],
@@ -66,10 +61,8 @@ class ArticleController extends Controller
         return redirect('/articles/'.$article->id);
     }
 
-    public function destroy(Request $request, int $id)
+    public function destroy(Request $request, Article $article)
     {
-        $article = \App\Models\Article::where('id', $id)->first();
-
         $article->delete();
 
         return redirect('/articles');
