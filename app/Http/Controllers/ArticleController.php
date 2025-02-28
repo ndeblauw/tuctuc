@@ -29,7 +29,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => ['required', 'string', 'min:10', 'max:255', 'starts_with:nico is great'],
+            'title' => ['required', 'string', 'min:10', 'max:255'],
             'content' => ['required'],
         ]);
 
