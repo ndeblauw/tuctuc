@@ -5,15 +5,6 @@
         @csrf
 
 
-        <div>
-            Content<br/>
-            <textarea name="content" class="border border-purple-600">{{old('content')}}</textarea>
-            @error('content')
-            <div class="bg-red-50 p-2 text-red-500">
-                {{$message}}
-            </div>
-            @enderror
-        </div>
 
 
 
@@ -21,5 +12,6 @@
     </form>
 
         <x-form-input name="title" label="Article title" placeholder="Your title comes here"/>
+        <x-form-textarea name="content" label="Your article content" rows="7"/>
 
 </x-site-layout>
