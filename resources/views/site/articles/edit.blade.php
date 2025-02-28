@@ -9,7 +9,7 @@
     >
 
         <x-form-input name="title" label="Article title" placeholder="Your title comes here" :value="$article->title"/>
-        <x-form-textarea name="content" label="Your article content" rows="7" :value="$article->title"/>
+        <x-form-textarea name="content" label="Your article content" rows="7" :value="$article->content"/>
 
     </x-form>
 
