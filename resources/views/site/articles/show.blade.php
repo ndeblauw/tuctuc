@@ -3,7 +3,7 @@
     <div class="text-right">
         <a href="{{route('articles.edit',$article)}}">edit article</a>
         |
-        <form action="{{route('articles.destroy')}}" method="post">
+        <form action="{{route('articles.destroy', $article)}}" method="post">
             @method('DELETE')
             @csrf
             <button type="submit">delete article</button>
