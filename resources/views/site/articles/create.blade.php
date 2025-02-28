@@ -4,7 +4,7 @@
         action="/articles"
         method="post"
         title="Create an article"
-        cancelurl="/articles"
+        :cancelurl="route('articles.index')"
         submittext="Create article"
     >
 

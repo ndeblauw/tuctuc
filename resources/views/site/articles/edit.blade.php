@@ -1,10 +1,10 @@
 <x-site-layout>
 
     <x-form
-        action="/articles/{{$article->id}}"
+        :action="route('articles.update',$article)"
         method="put"
         title="Update article"
-        cancelurl="/articles/{{$article->id}}"
+        :cancelurl="route('articles.show',$article)"
         submittext="Update article"
     >
 

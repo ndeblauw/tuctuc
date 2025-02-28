@@ -1,9 +1,9 @@
 <x-site-layout>
 
     <div class="text-right">
-        <a href="/articles/{{$article->id}}/edit">edit article</a>
+        <a href="{{route('articles.edit',$article)}}">edit article</a>
         |
-        <form action="/articles/{{$article->id}}" method="post">
+        <form action="{{route('articles.destroy')}}" method="post">
             @method('DELETE')
             @csrf
             <button type="submit">delete article</button>
