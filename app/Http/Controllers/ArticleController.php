@@ -49,7 +49,7 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $request->validate([
-            'title' => ['required'],
+            'title' => ['required', 'string', 'min:10', 'max:255'],
             'content' => ['required'],
         ]);
 
