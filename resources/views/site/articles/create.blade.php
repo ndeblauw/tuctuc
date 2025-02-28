@@ -4,16 +4,6 @@
 
         @csrf
 
-        <div>
-            Title<br/>
-            <input type="text" name="title" class="border border-purple-600" value="{{old('title')}}">
-            @error('title')
-            <div class="bg-red-50 p-2 text-red-500">
-                {{$message}}
-            </div>
-            @enderror
-
-        </div>
 
         <div>
             Content<br/>
@@ -30,5 +20,6 @@
         <button type="submit">Create article</button>
     </form>
 
+        <x-form-input name="title" label="Article title" placeholder="Your title comes here"/>
 
 </x-site-layout>
