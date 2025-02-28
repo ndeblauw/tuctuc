@@ -7,8 +7,14 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 
 Route::resource('articles', \App\Http\Controllers\ArticleController::class);
 
-Route::get('/authors', [\App\Http\Controllers\AuthorController::class, 'index']);
-Route::get('/authors/{id}', [\App\Http\Controllers\AuthorController::class, 'show']);
+Route::resource('authors', \App\Http\Controllers\AuthorController::class)->only(['index', 'show']);
+
+
+
+
+
+
+
 
 
 Route::view('dashboard', 'dashboard')

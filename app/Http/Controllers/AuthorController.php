@@ -16,9 +16,10 @@ class AuthorController extends Controller
         return view('site.authors.index', compact('authors'));
     }
 
-    public function show(int $id)
+    public function show(int $author)
     {
-        $author = \App\Models\User::where('id', $id)->first();
+
+        $author = \App\Models\User::where('id', $author)->first();
 
         return view('site.authors.show', compact('author'));
     }
