@@ -24,7 +24,7 @@ class SiteLayoutHeader extends Component
         $menu = [
             'Articles' => '/articles',
             'Authors' => '/authors',
-            //'keywords' => null,
+            'Keywords' => route('keywords.index'),
             //'contact us' => null,
         ];
 
