@@ -8,6 +8,7 @@ use App\Models\Keyword;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +17,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::create([
+            'name' => 'Nico Deblauwe',
+            'email' => 'nico@deblauwe.be',
+            'password' => '$2y$12$0IvSG2UEsUdrt8fESwHSXezV6ft2Ulx82rHm85gx3z3RAbfydGd/y',
+        ]);
+
         User::factory(10)->create();
         $articles = Article::factory(10)->create();
         Comment::factory(25)->create();
