@@ -9,10 +9,11 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 Route::resource('articles', \App\Http\Controllers\ArticleController::class)->only(['index', 'show']);
 Route::resource('authors', \App\Http\Controllers\AuthorController::class)->only(['index', 'show']);
 
-Route::resource('articles', \App\Http\Controllers\ArticleController::class);
 
+// Logged in user area of website (= admin area for this app)
 Route::prefix('/admin')->name('admin.')->middleware(['auth'])->group(function () {
     Route::get('/', \App\Http\Controllers\Admin\DashboardController::class )->name('dashboard');
+    Route::resource('articles', \App\Http\Controllers\Admin\ArticleController::class);
 });
 
 Route::resource('keywords', \App\Http\Controllers\KeywordController::class)->except(['show']);
