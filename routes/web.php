@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
+
+// Public area of website
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('articles', \App\Http\Controllers\ArticleController::class)->only(['index', 'show']);
 
 Route::resource('articles', \App\Http\Controllers\ArticleController::class);
 
