@@ -8,6 +8,9 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 Route::resource('articles', \App\Http\Controllers\ArticleController::class);
 
 Route::resource('authors', \App\Http\Controllers\AuthorController::class)->only(['index', 'show']);
+Route::prefix('/admin')->name('admin.')->middleware(['auth'])->group(function () {
+    Route::get('/', \App\Http\Controllers\Admin\DashboardController::class )->name('dashboard');
+});
 
 Route::resource('keywords', \App\Http\Controllers\KeywordController::class)->except(['show']);
 
