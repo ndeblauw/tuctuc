@@ -13,10 +13,9 @@
         <x-form-input name="title" label="Article title" placeholder="Your title comes here"/>
         <x-form-textarea name="content" label="Your article content" rows="7"/>
 
-        @foreach( \App\Models\Keyword::orderBy('name')->get() as $keyword)
-            <input type="checkbox" name="keywords[]" value="{{$keyword->id}}" @checked(old('keywords') && in_array($keyword->id, old('keywords')))>
-            <label for="keywords[]">{{$keyword->title}}</label><br>
-        @endforeach
+
+        <x-form-checkboxes name="keywords" label="Keywords" :options="\App\Models\Keyword::orderBy('title')->pluck('title', 'id')->toArray()" />
+
 
 
     </x-form>
