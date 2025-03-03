@@ -11,4 +11,10 @@ class Keyword extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    // Model relations
+    public function articles()
+    {
+        return $this->belongsToMany(Article::class);
+    }
 }

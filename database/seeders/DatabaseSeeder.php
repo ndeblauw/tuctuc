@@ -17,9 +17,15 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory(10)->create();
-        Article::factory(10)->create();
+        $articles = Article::factory(10)->create();
         Comment::factory(25)->create();
 
         Keyword::factory(5)->create();
+
+        foreach($articles as $article){
+            $nr = random_int(1,3);
+            $keywords = Keyword::inRandomOrder()->take($nr)->get();
+            $article->keywords()->attach($keywords);
+        }
     }
 }
