@@ -1,10 +1,10 @@
 <x-site-layout>
 
     <x-form
-        :action="route('keywords.store')"
+        :action="route('admin.keywords.store')"
         method="post"
         title="Create keyword"
-        :cancelurl="route('keywords.index')"
+        :cancelurl="route('admin.keywords.index')"
         submittext="Create keyword"
     >
 

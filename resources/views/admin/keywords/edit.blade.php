@@ -1,10 +1,10 @@
 <x-site-layout>
 
     <x-form
-        :action="route('keywords.update',$keyword)"
+        :action="route('admin.keywords.update',$keyword)"
         method="put"
         title="Update keyword"
-        :cancelurl="route('keywords.index')"
+        :cancelurl="route('admin.keywords.index')"
         submittext="Update keyword"
     >
 
