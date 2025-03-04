@@ -16,8 +16,7 @@
         @foreach($articles as $article)
             <li class="hover:bg-gray-100 p-2 flex justify-between">
                 <a class="" href="{{route('admin.articles.show', $article)}}">
-                    <h3 class="font-bold text-2xl">{{$article->title}}</h3>
-                    <p class="line-clamp-2"> {{$article->content}}</p>
+                    <h3 class="">{{$article->title}}</h3>
                 </a>
                 <div class="flex justify-center items-center gap-2">
                     <div>
