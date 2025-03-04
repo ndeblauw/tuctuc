@@ -8,6 +8,10 @@
     </div>
 
 
+    <div>
+        {{$articles->links()}}
+    </div>
+
     <ul class=" mt-12">
         @foreach($articles as $article)
             <li class="hover:bg-gray-100 p-2 flex justify-between">
