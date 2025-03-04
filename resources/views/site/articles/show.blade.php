@@ -13,6 +13,13 @@
         {{$article->content}}
     </p>
 
+        <div class="my-12">
+            <h2 class="font-bold">related articles</h2>
+            @foreach($related_articles as $related_article)
+                <a href="{{route('articles.show', $related_article)}}" class="underline">{{$related_article->title}}</a>
+            @endforeach
+        </div>
+
     <x-article-contact-author :author="$article->author"/>
 
 </x-site-layout>
