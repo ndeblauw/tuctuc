@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Nico Deblauwe',
             'email' => 'nico@deblauwe.be',
             'password' => '$2y$12$0IvSG2UEsUdrt8fESwHSXezV6ft2Ulx82rHm85gx3z3RAbfydGd/y',
+            'is_admin' => true,
         ]);
 
         User::factory(10)->create();
