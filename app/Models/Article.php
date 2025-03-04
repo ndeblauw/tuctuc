@@ -22,4 +22,18 @@ class Article extends Model
     {
         return $this->belongsToMany(Keyword::class);
     }
+
+    // Business logic
+    public function canEdit(): bool
+    {
+        if($this->author_id === auth()->id()) {
+            return true;
+        }
+
+        if(auth()->user()->is_admin) {
+            return true;
+        }
+
+        return false;
+    }
 }

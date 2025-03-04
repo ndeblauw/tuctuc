@@ -8,13 +8,21 @@
     </div>
 
 
-    <ul class="grid grid-cols-3 gap-12 mt-12">
+    <ul class=" mt-12">
         @foreach($articles as $article)
-            <li class=" p-2 border-t-2 border-t-black hover:bg-purple-50">
+            <li class="hover:bg-gray-100 p-2 flex justify-between">
                 <a class="" href="{{route('admin.articles.show', $article)}}">
                     <h3 class="font-bold text-2xl">{{$article->title}}</h3>
                     <p class="line-clamp-2"> {{$article->content}}</p>
                 </a>
+                <div class="flex justify-center items-center gap-2">
+                    <div>
+                        <a class="bg-purple-100 text-purple-500 hover:bg-purple-200 p-2 rounded uppercase font-semibold" href="{{route('admin.articles.edit', $article)}}">edit</a>
+
+                    </div>
+                    <form action="{{route('admin.articles.destroy',$article)}}" method="post">@csrf @method('delete') <button class="bg-purple-100 text-purple-500 hover:bg-purple-200 p-2 rounded uppercase font-semibold" type="submit">delete</button></form>
+
+                </div>
             </li>
         @endforeach
     </ul>
