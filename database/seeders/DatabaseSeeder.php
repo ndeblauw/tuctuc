@@ -24,11 +24,11 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true,
         ]);
 
-        User::factory(10)->create();
-        $articles = Article::factory(10)->create();
-        Comment::factory(25)->create();
+        User::factory(30)->create();
+        $articles = Article::factory(150)->create();
+        Comment::factory(250)->create();
 
-        Keyword::factory(5)->create();
+        Keyword::factory(10)->create();
 
         foreach($articles as $article){
             $nr = random_int(1,3);

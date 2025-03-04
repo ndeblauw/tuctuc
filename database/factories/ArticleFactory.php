@@ -18,8 +18,8 @@ class ArticleFactory extends Factory
     {
         return [
             'title' => fake()->sentence,
-            'content' => fake()->paragraph,
-            'author_id' => fake()->numberBetween(1, 10),
+            'content' => fake()->paragraph(55, true),
+            'author_id' => fake()->numberBetween(1, 15),
         ];
     }
 }
