@@ -1,11 +1,13 @@
 <x-site-layout>
-    <div class="max-w-6xl mx-auto grid grid-cols-3">
+    <div class="max-w-6xl mx-auto grid grid-cols-3 gap-x-12">
 
         <div class="col-span-2">
-            @foreach($articles as $article)
-                <h2>{{$article->title}}</h2>
+            <ul class="grid grid-cols-1 gap-12">
+                @foreach($articles as $article)
+                   <x-article-card :article="$article" />
+                @endforeach
+            </ul>
 
-            @endforeach
         </div>
 
         <div class="bg-purple-50 p-4">
@@ -13,6 +15,8 @@
             @foreach($authors as $author)
                 {{$author->name}}<br/>
             @endforeach
+
+            <h3 class="font-bold mt-12">Our top keywords</h3>
         </div>
     </div>
 </x-site-layout>
