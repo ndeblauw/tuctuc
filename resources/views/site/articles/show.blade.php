@@ -9,9 +9,14 @@
 
     <div class="mb-8">Article by <span class="font-semibold">{{$article->author->name}}</span></div>
 
-    <p>
-        {{$article->content}}
-    </p>
+        <div class="text-xl font-semibold mb-4 mb-12">
+            {{ $article->getSummaryText() }}
+
+        </div>
+
+    <div>
+        {!! $article->getContentText() !!}
+    </div>
 
         <div class="my-12">
             <h2 class="font-bold">related articles</h2>

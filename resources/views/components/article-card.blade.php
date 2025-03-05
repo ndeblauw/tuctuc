@@ -5,6 +5,6 @@
         @endforeach
         <h3 class="font-bold text-2xl">{{$article->title}}</h3>
         <span class="italic border-l-2 border-purple-500 pl-2">by {{$article->author->name}}</span>
-        <p class="line-clamp-2"> {{$article->content}}</p>
+        <p class="line-clamp-2"> {{$article->getSummaryText()}}</p>
     </a>
 </li>

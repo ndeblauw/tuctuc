@@ -36,4 +36,18 @@ class Article extends Model
 
         return false;
     }
+
+    public function getContentText(): string
+    {
+        $content = $this->content;
+        $content = str_replace('<p>', '<p class="mb-4 text-lg text-slate-800">', $content);
+        $content = str_replace('<ul>', '<ul class="list-disc pl-4 text-lg text-slate-800 mb-4">', $content);
+
+        return $content;
+    }
+
+    public function getSummaryText(): string
+    {
+        return str(strip_tags($this->content))->limit(250);
+    }
 }

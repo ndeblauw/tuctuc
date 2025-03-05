@@ -18,8 +18,18 @@ class ArticleFactory extends Factory
     {
         return [
             'title' => fake()->sentence,
-            'content' => fake()->paragraph(55, true),
+            'content' => $this->getParagraphs(),
             'author_id' => fake()->numberBetween(1, 15),
         ];
+    }
+
+    private function getParagraphs(): string
+    {
+        $content = '';
+        for($x = 0; $x < rand(3,8) ; $x++) {
+            $content .= '<p>'.fake()->realTextBetween(100,450).'</p>';
+        }
+
+        return $content;
     }
 }
