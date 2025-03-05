@@ -1,5 +1,5 @@
 
-<form action="{{$action}}" method="post" class="border-2 border-purple-500 p-4 ">
+<form action="{{$action}}" method="post" enctype="multipart/form-data" class="border-2 border-purple-500 p-4 ">
     @csrf
 
     @if($method=='put')

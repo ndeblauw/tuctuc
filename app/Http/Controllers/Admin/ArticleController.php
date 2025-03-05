@@ -36,6 +36,7 @@ class ArticleController extends Controller
             'title' => ['required', 'string', 'min:10', 'max:255'],
             'content' => ['required'],
             'keywords' => ['required',  'array'],
+            'photo' => ['nullable', 'file', 'mimes:jpg,jpeg,png,gif', 'max:2048'],
         ]);
 
         $article = Article::create([
@@ -43,6 +44,10 @@ class ArticleController extends Controller
                 'content' => $request->content,
                 'author_id' => auth()->user()->id,
             ]);
+
+        if($request->has('photo')) {
+            $article->addMediaFromRequest('photo')->toMediaCollection('photo');
+        }
 
         $article->keywords()->sync($request->keywords);
 
@@ -68,6 +73,7 @@ class ArticleController extends Controller
             'title' => ['required', 'string', 'min:10', 'max:255'],
             'content' => ['required'],
             'keywords' => ['required',  'array'],
+            'photo' => ['nullable', 'file', 'mimes:jpg,jpeg,png,gif', 'max:2048'],
         ]);
 
         $article->update([
@@ -77,6 +83,11 @@ class ArticleController extends Controller
 
 
         $article->keywords()->sync($request->keywords);
+
+        if($request->has('photo')) {
+            $article->getMedia('photo')->each->delete();
+            $article->addMediaFromRequest('photo')->toMediaCollection('photo');
+        }
 
         return redirect()->route('admin.articles.show', $article);
     }
