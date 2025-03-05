@@ -22,9 +22,9 @@
 
     <div class="mb-8">Article by <span class="font-semibold">{{$article->author->name}}</span></div>
 
-    <p>
-        {{$article->content}}
-    </p>
+    <div>
+        {!! $article->getContentText() !!}
+    </div>
 
     <x-article-contact-author :author="$article->author"/>
 
