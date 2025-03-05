@@ -16,11 +16,9 @@
     @endforeach
     <h2 class="font-bold mb-4 text-4xl">ADMIN {{$article->title}}</h2>
 
-    @if($article->getMedia('photo')->first() !== null) {
-        <div class="w-2/3">
-            <img class="" src="{{$article->getMedia('photo')->first()->getUrl('thumb')}}">
-        </div>
-    @endif
+    <div class="w-2/3">
+        <img class="object-fit" src="{{$article->getImageUrl()}}">
+    </div>
 
     <div class="mb-8">Article by <span class="font-semibold">{{$article->author->name}}</span></div>
 

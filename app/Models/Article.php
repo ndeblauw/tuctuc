@@ -49,6 +49,15 @@ class Article extends Model implements HasMedia
         return $content;
     }
 
+    public function getImageUrl(): string
+    {
+        if($this->getMedia('photo')->first() !== null) {
+            return $this->getMedia('photo')->first()->getUrl('thumb');
+        } else {
+            return 'https://picsum.photos/200/300';
+        }
+    }
+
     public function getSummaryText(): string
     {
         return str(strip_tags($this->content))->limit(250);

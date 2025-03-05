@@ -9,11 +9,9 @@
 
     <div class="mb-8">Article by <span class="font-semibold">{{$article->author->name}}</span></div>
 
-        @if($article->getMedia('photo')->first() !== null) {
         <div class="w-2/3">
-            <img class="" src="{{$article->getMedia('photo')->first()->getUrl('thumb')}}">
+            <img class="object-fit" src="{{ $article->getImageUrl() }}"/>
         </div>
-        @endif
 
         <div class="text-xl font-semibold mb-4 mb-12">
             {{ $article->getSummaryText() }}
