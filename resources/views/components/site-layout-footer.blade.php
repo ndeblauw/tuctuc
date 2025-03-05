@@ -1,7 +1,8 @@
-<div class="relative bg-purple-700 text-purple-50 border-t-6 border-purple-500 min-h-64">
+<div class="relative bg-purple-700 text-purple-50 min-h-64">
 
+    <div class="absolute top-0 w-full h-2 bg-white opacity-20"></div>
 
-    <div class="absolute inset-0 bg-[url('/img/green-dust-and-scratches.png')] opacity-90 mix-blend-overlay z-0"></div>
+    <div class="absolute inset-0 bg-[url('/img/gplay.png')] opacity-90 mix-blend-overlay z-0"></div>
 
     <div class="max-w-7xl m-auto mt-8">
         <div class="pt-16 grid grid-cols-6">

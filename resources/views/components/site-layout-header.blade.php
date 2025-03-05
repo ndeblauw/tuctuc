@@ -1,5 +1,5 @@
 <div class="relative bg-purple-700 text-purple-50 border-t-6 border-purple-500">
-    <div class="absolute inset-0 bg-[url('/img/green-dust-and-scratches.png')] opacity-90 mix-blend-overlay z-0"></div>
+    <div class="absolute inset-0 bg-[url('/img/gplay.png')] opacity-90 mix-blend-overlay z-0"></div>
 
     <div class="relative max-w-7xl m-auto flex justify-between items-center h-20 z-50">
         <div class="">
