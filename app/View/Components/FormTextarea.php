@@ -17,6 +17,7 @@ class FormTextarea extends Component
         public ?string $placeholder = null,
         public ?string $value = null,
         public int $rows = 3,
+        public bool $rte = false,
     )
     {
         //
