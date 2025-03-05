@@ -11,6 +11,14 @@
         </div>
 
         <div>
+            <div class="relative bg-purple-50 rounded-xl mb-8 p-4 overflow-hidden min-h-32">
+                <h2 class="font-bold text-purple-800 mb-4">Harbour.Space @ UTCC</h2>
+
+                <p class="text-purple-950">
+                    Where innovation meets ambition, and student life is a journey of collaboration, creativity, and endless possibilities.
+                </p>
+            </div>
+
             <div class="relative bg-slate-50 rounded-xl mb-8 p-4 overflow-hidden min-h-32">
                 <h2 class="font-bold text-slate-800 mb-4">Our top contributors</h2>
 
