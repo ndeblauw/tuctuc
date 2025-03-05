@@ -10,13 +10,19 @@
 
         </div>
 
-        <div class="bg-purple-50 p-4">
-            <h3 class="font-bold">Our top authors</h3>
-            @foreach($authors as $author)
-                {{$author->name}}<br/>
-            @endforeach
+        <div>
+            <div class="relative bg-slate-50 rounded-xl mb-8 p-4 overflow-hidden">
+                <h2 class="font-bold text-slate-800 mb-4">Our top contributors</h2>
+                <p class="text-black">
+                    @foreach($authors as $author)
+                        {{$author->name}}<br/>
+                    @endforeach
+                </p>
+            </div>
+            <div>
+                <h3 class="font-bold mt-12">Our top keywords</h3>
+            </div>
 
-            <h3 class="font-bold mt-12">Our top keywords</h3>
         </div>
     </div>
 </x-site-layout>
