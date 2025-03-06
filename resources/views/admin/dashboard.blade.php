@@ -6,6 +6,12 @@
         Your name is {{auth()->user()->name}}
     </div>
 
+    @if( auth()->user()->articles->isEmpty() )
+        <div class="text-sm p-2 text-red-500 bg-red-100 rounded-xl my-12">
+            You have no articles yet.
+        </div>
+    @endif
+
     @if(auth()->user()->is_admin)
         <div class="bg-gray-100 rounded-xl p-4 my-12">
             You are an admin,
