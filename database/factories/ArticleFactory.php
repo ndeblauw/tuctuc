@@ -20,6 +20,7 @@ class ArticleFactory extends Factory
             'title' => fake()->sentence,
             'content' => $this->getParagraphs(),
             'author_id' => fake()->numberBetween(1, 15),
+            'published_at' => fake()->boolean(80) ? fake()->dateTimeBetween('-1 year', 'now') : null,
         ];
     }
 
