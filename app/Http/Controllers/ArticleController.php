@@ -9,7 +9,7 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = Article::with('author', 'keywords')->paginate(150);
+        $articles = Article::whereNotNull('published_at')->with('author', 'keywords')->latest('published_at')->paginate(15);
 
         return view('site.articles.index', ['articles' => $articles]);
     }
@@ -17,6 +17,10 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $article->load('author', 'keywords');
+
+        if($article->published_at === null) {
+            abort(404);
+        }
 
         /*
          * PROMPT - I have a Laravel application. The Article model has a belongsToMany relation with the Keyword model.

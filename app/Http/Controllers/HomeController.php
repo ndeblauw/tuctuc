@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $articles = Article::with('keywords', 'author')->take(4)->latest()->get();
+        $articles = Article::with('keywords', 'author')->whereNotNull('published_at')->take(4)->latest('published_at')->get();
         $authors = User::withCount('articles')->whereHas('articles')->get();
 
         $authors = $authors->sortByDesc( fn($author) => $author->articles_count )->take(4);
