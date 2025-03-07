@@ -28,9 +28,25 @@
             <a href="{{route('admin.articles.create')}}" class="bg-purple-100 text-purple-500 hover:bg-purple-200 p-2 rounded uppercase font-semibold">Create article</a>
         </div>
 
+        @if( session()->has('success'))
+            <div class="p-2 bg-green-200 w-full my-4">
+                {{ session()->get('success') }}
+
+            </div>
+        @endif
+
         <ul class="list-disc pl-4">
             @foreach(auth()->user()->articles as $article)
-                <li>{{$article->title}}</li>
+                <li>
+                    {{$article->title}}
+                    @if($article->published_at)
+                        <a href="{{route('admin.articles.unpublish', $article)}}" class="bg-red-100 text-red-500 hover:bg-red-200 p-0.5 text-xs rounded uppercase font-semibold">UNPUBLISH</a>
+                    @else
+                        <a href="{{route('admin.articles.publish', $article)}}" class="bg-green-100 text-green-500 hover:bg-green-200 p-0.5 text-xs rounded uppercase font-semibold">PUBLISH NOW</a>
+                    @endif
+
+
+                </li>
             @endforeach
 
         </ul>

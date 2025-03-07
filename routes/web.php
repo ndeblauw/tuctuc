@@ -14,6 +14,8 @@ Route::resource('authors', \App\Http\Controllers\AuthorController::class)->only(
 Route::prefix('/admin')->name('admin.')->middleware(['auth'])->group(function () {
     Route::get('/', \App\Http\Controllers\Admin\DashboardController::class )->name('dashboard');
     Route::resource('articles', \App\Http\Controllers\Admin\ArticleController::class);
+    Route::get('articles/{article}/publish', [\App\Http\Controllers\Admin\ArticlePublishController::class, 'publish'])->name('articles.publish');
+    Route::get('articles/{article}/unpublish', [\App\Http\Controllers\Admin\ArticlePublishController::class, 'unpublish'])->name('articles.unpublish');
 
     Route::resource('keywords', \App\Http\Controllers\KeywordController::class)->except(['show'])->middleware([\App\Http\Middleware\IsAdmin::class]);
 });
