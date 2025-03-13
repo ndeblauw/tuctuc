@@ -24,7 +24,7 @@ class SiteLayoutHeader extends Component
         $menu = [
             'Articles' => route('articles.index'),
             'Authors' => route('authors.index'),
-            //'contact us' => null,
+            'contact us' => route('contact.create'),
         ];
 
         return view('components.site-layout-header', compact('menu'));
