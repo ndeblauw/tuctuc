@@ -21,6 +21,11 @@ class Article extends Model implements HasMedia
         return $this->belongsTo(User::class, 'author_id');
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function keywords()
     {
         return $this->belongsToMany(Keyword::class);

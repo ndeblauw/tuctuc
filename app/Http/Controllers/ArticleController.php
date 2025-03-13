@@ -16,7 +16,7 @@ class ArticleController extends Controller
 
     public function show(Article $article)
     {
-        $article->load('author', 'keywords');
+        $article->load('author', 'keywords', 'comments');
 
         if($article->published_at === null) {
             abort(404);

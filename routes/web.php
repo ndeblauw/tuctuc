@@ -9,6 +9,8 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 Route::resource('articles', \App\Http\Controllers\ArticleController::class)->only(['index', 'show']);
 Route::resource('authors', \App\Http\Controllers\AuthorController::class)->only(['index', 'show']);
 
+Route::post('comments', [\App\Http\Controllers\ArticleCommentController::class, 'store'])->name('comments.store');
+
 Route::get('contact-me', [\App\Http\Controllers\ContactMeController::class, 'create'])->name('contact.create');
 Route::post('contact-me', [\App\Http\Controllers\ContactMeController::class, 'store'])->name('contact.store');
 
