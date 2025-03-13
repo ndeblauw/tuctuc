@@ -37,6 +37,8 @@ class ArticleCommentController extends Controller
                     'email' => $request->email,
                     'password' => \Hash::make(random_bytes(8)),
                 ]);
+
+                $user->notify( new NewAccountCreatedForYou());
             }
         }
 
@@ -45,6 +47,8 @@ class ArticleCommentController extends Controller
             'author_id' => auth()->id() ?? $user->id,
             'comment' => $request->comment,
         ]);
+
+        $comment->article->author->notify(new NewCommentToYourArticle($comment));
 
         return redirect()->route('articles.show', $request->article_id);
     }
