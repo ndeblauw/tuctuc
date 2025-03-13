@@ -11,7 +11,7 @@ class AuthorController extends Controller
 {
     public function index()
     {
-        $authors = User::whereHas('articles')->orderBy('name')->get();
+        $authors = User::whereHas('articles')->with('articles')->orderBy('name')->get();
 
         return view('site.authors.index', compact('authors'));
     }
